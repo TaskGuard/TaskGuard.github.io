@@ -34,7 +34,16 @@ export function Header(): JSX.Element {
           </Link>
         </Group>
 
-        <Group spacing={0} position="right" h={headerHeight}>
+        <Group
+          spacing={0}
+          position="right"
+          h={headerHeight}
+          css={{
+            "@media (max-width: 767px)": {
+              display: "none",
+            },
+          }}
+        >
           <ActionIcon size="lg" component="a" href="https://github.com/orgs/TaskGuard/repositories" rel="noreferrer" target="_blank">
             <FontAwesomeIcon icon={faGithub} />
           </ActionIcon>
