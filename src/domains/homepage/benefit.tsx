@@ -3,12 +3,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Card, Text } from "@mantine/core";
 import { PropsWithChildren } from "react";
 
-export type FeatureProps = PropsWithChildren<{
+export type BenefitProps = PropsWithChildren<{
   title: string;
   icon: IconProp;
 }>;
 
-export function Feature({ title, icon, children }: FeatureProps): JSX.Element {
+export function Benefit({ title, icon, children }: BenefitProps): JSX.Element {
   return (
     <Card shadow="md" radius="md" padding="xl">
       <FontAwesomeIcon icon={icon} size="xl" color="#00cb83" />

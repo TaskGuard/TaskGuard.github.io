@@ -1,17 +1,21 @@
-import { css } from "@emotion/react";
-import { Features } from "./features";
+import { Route, Routes } from "react-router-dom";
+
+import { Layout } from "./common/components/layout";
+import { DownloadPage } from "./domains/download/donwloadPage";
+import { NotFoundPage } from "./domains/errorPages/notFoundPage";
+import { FeaturesPage } from "./domains/features/featuresPage";
+import { Homepage } from "./domains/homepage/homepage";
 
 function App() {
   return (
-    <div css={css({ textAlign: "center", display: "flex", alignItems: "center", height: "100vh" })}>
-      <div css={css({ margin: "auto" })}>
-        <h1 css={css({ fontSize: 52, marginBottom: 10 })}>TaskGuard</h1>
-        <p css={css({ fontSize: 18 })}>
-          Personal <strong>task management</strong> app.
-        </p>
-        <Features />
-      </div>
-    </div>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Homepage />} />
+        <Route path="download" element={<DownloadPage />} />
+        <Route path="features" element={<FeaturesPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Route>
+    </Routes>
   );
 }
 

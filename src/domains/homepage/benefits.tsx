@@ -1,9 +1,9 @@
 import { Container, Group, Badge, Text, SimpleGrid } from "@mantine/core";
 import { faDove, faEye, faShield } from "@fortawesome/free-solid-svg-icons";
-import { Feature } from "./feature";
+import { Benefit } from "./benefit";
 import { css } from "@emotion/react";
 
-export function Features(): JSX.Element {
+export function Benefits(): JSX.Element {
   return (
     <Container size="lg" py="xl">
       <Group position="center">
@@ -17,17 +17,17 @@ export function Features(): JSX.Element {
       </Text>
 
       <SimpleGrid cols={3} spacing="xl" mt={50} breakpoints={[{ maxWidth: "md", cols: 1 }]}>
-        <Feature title="Privacy" icon={faEye}>
+        <Benefit title="Privacy" icon={faEye}>
           Your data stays on your devices. With end-to-end encryption, you can sync and backup your data with providers you trust.
-        </Feature>
+        </Benefit>
 
-        <Feature title="Freedom" icon={faDove}>
+        <Benefit title="Freedom" icon={faDove}>
           TaskGuard is free with no limits. The app runs on your devices and you take care of your data, so there are no server costs.
-        </Feature>
+        </Benefit>
 
-        <Feature title="Security" icon={faShield}>
+        <Benefit title="Security" icon={faShield}>
           Decentralized system and end-to-end encryption provide a high level of protection over cloud-based products.
-        </Feature>
+        </Benefit>
       </SimpleGrid>
     </Container>
   );
