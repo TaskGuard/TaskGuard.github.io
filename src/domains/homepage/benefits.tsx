@@ -1,7 +1,8 @@
 import { Container, Group, Badge, Text, SimpleGrid } from "@mantine/core";
-import { faDove, faEye, faShield } from "@fortawesome/free-solid-svg-icons";
-import { Benefit } from "./benefit";
+import { faDove, faEye, faGears, faHeart, faShield, faSignal } from "@fortawesome/free-solid-svg-icons";
 import { css } from "@emotion/react";
+
+import { Benefit } from "./benefit";
 
 export function Benefits(): JSX.Element {
   return (
@@ -27,6 +28,18 @@ export function Benefits(): JSX.Element {
 
         <Benefit title="Security" icon={faShield}>
           Decentralized system and end-to-end encryption provide a high level of protection over cloud-based products.
+        </Benefit>
+
+        <Benefit title="High availability" icon={faSignal}>
+          App works offline. Connection is only required for multi-device sync and external backup.
+        </Benefit>
+
+        <Benefit title="Feature-rich" icon={faGears}>
+          Includes features such as calendar view, repeated tasks, due dates, notifications, lists, labels and more.
+        </Benefit>
+
+        <Benefit title="User-friendly" icon={faHeart}>
+          Clean and simple design with modern look. No ads or annoying pop-ups.
         </Benefit>
       </SimpleGrid>
     </Container>
