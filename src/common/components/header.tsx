@@ -32,6 +32,9 @@ export function Header(): JSX.Element {
           <Link to="/features" css={css({ textDecoration: "none", color: Color.White })}>
             Features
           </Link>
+          <Link to="/blog" css={css({ textDecoration: "none", color: Color.White })}>
+            Blog
+          </Link>
         </Group>
 
         <Group
