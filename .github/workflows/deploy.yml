@@ -42,7 +42,7 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Copy html to dist
-        run: cp ./dist/index.html ./dist/download.html && cp ./dist/index.html ./dist/features.html && cp ./dist/index.html ./dist/blog.html && cp ./dist/index.html ./dist/how-to-distribute-your-apps.html
+        run: cp ./dist/index.html ./dist/download.html && cp ./dist/index.html ./dist/features.html && cp ./dist/index.html ./dist/blog.html && cp ./dist/index.html ./dist/blog/how-to-distribute-your-apps.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
