@@ -1,11 +1,12 @@
 import { Fragment } from "react";
+
 import { BlogArticle } from "../blogArticle";
 
 export function HowToDistributeYourApps(): JSX.Element {
   return (
     <BlogArticle
       title="How to Distribute Your Apps"
-      image={"/blog/how-to-distribute-your-apps.jpg"}
+      image="/blog/how-to-distribute-your-apps.jpg"
       header={[
         <p>
           If you decide to develop your own application, sooner or later, you will face the challenge of choosing the right technologies and
