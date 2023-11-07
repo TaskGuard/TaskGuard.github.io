@@ -12,7 +12,7 @@ export function GlobalStyles() {
           margin: 0,
           width: "100%",
           height: "100%",
-          fontFamily: "Inter, system-ui, Avenir, Helvetica, Arial, sans-serif",
+          fontFamily: '"Roboto", Helvetica, Sans-Serif',
           backgroundColor: "#0b1727",
           color: "#ffffff",
           textRendering: "optimizeLegibility",
