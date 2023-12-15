@@ -1,4 +1,5 @@
 import { css, Global } from "@emotion/react";
+import { Color } from "./common/constants/colorConstants";
 
 export function GlobalStyles() {
   return (
@@ -14,7 +15,7 @@ export function GlobalStyles() {
           height: "100%",
           fontFamily: '"Roboto", Helvetica, Sans-Serif',
           backgroundColor: "#0b1727",
-          color: "#ffffff",
+          color: Color.White,
           textRendering: "optimizeLegibility",
           fontWeight: 400,
         },
