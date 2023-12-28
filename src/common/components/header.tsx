@@ -1,11 +1,11 @@
 import { css } from "@emotion/react";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Header as MantineHeader, Container, Group, ActionIcon } from "@mantine/core";
 import { Link } from "react-router-dom";
-import { Color } from "../constants/colorConstants";
 
+import { Color } from "../constants/colorConstants";
+import { icon } from "../constants/iconConstants";
 import { headerHeight } from "../constants/layoutConstants";
+import { Icon } from "./icon";
 import { Logo } from "./logo";
 import { MainMenu } from "./mainMenu";
 
@@ -39,7 +39,7 @@ export function Header(): JSX.Element {
           }}
         >
           <ActionIcon size="lg" component="a" href="https://github.com/orgs/TaskGuard/repositories" rel="noreferrer" target="_blank">
-            <FontAwesomeIcon icon={faGithub} />
+            <Icon icon={icon.github} />
           </ActionIcon>
         </Group>
       </Container>
