@@ -1,8 +1,8 @@
-import { css } from "@emotion/react";
 import { Fragment, PropsWithChildren, ReactNode } from "react";
-import { Helmet } from "react-helmet-async";
+import { css } from "@emotion/react";
 
 import { Container } from "../../common/components/container";
+import { Head } from "../../common/components/head";
 import { Page } from "../../common/components/page";
 import { Color } from "../../common/constants/colorConstants";
 
@@ -16,10 +16,8 @@ export type BlogArticleProps = PropsWithChildren<{
 export function BlogArticle({ title, image, header, children, footer }: BlogArticleProps): JSX.Element {
   return (
     <Fragment>
-      <Helmet>
-        <title>{title} | TaskGuard</title>
-        <meta name="description" content={title} />
-      </Helmet>
+      <Head title={title} description={title} />
+
       <Page>
         <Container>
           <article css={css({ fontSize: 18, color: "#999999", h2: { color: Color.White }, h3: { color: Color.White } })}>

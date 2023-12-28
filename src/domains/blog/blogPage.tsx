@@ -1,7 +1,7 @@
 import { Fragment } from "react";
-import { Helmet } from "react-helmet-async";
-import { Container } from "../../common/components/container";
 
+import { Container } from "../../common/components/container";
+import { Head } from "../../common/components/head";
 import { Page } from "../../common/components/page";
 import { BlogRoute } from "./blogRoutes";
 import { BlogEntry } from "./parts/blogEntry";
@@ -9,10 +9,7 @@ import { BlogEntry } from "./parts/blogEntry";
 export function BlogPage(): JSX.Element {
   return (
     <Fragment>
-      <Helmet>
-        <title>Blog | TaskGuard</title>
-        <meta name="description" content="TaskGuard blog" />
-      </Helmet>
+      <Head title="Blog" description="TaskGuard blog" />
       <Page>
         <Container>
           <h1>Blog</h1>

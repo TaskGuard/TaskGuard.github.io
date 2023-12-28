@@ -1,8 +1,8 @@
 import { css } from "@emotion/react";
 import { Fragment } from "react";
-import { Helmet } from "react-helmet-async";
-import { Container } from "../../common/components/container";
 
+import { Container } from "../../common/components/container";
+import { Head } from "../../common/components/head";
 import { Page } from "../../common/components/page";
 import { Color } from "../../common/constants/colorConstants";
 import { Feature } from "./feature";
@@ -10,10 +10,7 @@ import { Feature } from "./feature";
 export function FeaturesPage(): JSX.Element {
   return (
     <Fragment>
-      <Helmet>
-        <title>Features | TaskGuard</title>
-        <meta name="description" content="List of TaskGuard features" />
-      </Helmet>
+      <Head title="Features" description="List of TaskGuard features" />
       <Page>
         <h1 css={css({ textAlign: "center" })}>Features</h1>
 
