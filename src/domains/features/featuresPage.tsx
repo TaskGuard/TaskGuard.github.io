@@ -1,8 +1,10 @@
 import { css } from "@emotion/react";
 import { Fragment } from "react";
 import { Helmet } from "react-helmet-async";
+import { Container } from "../../common/components/container";
 
 import { Page } from "../../common/components/page";
+import { Color } from "../../common/constants/colorConstants";
 import { Feature } from "./feature";
 
 export function FeaturesPage(): JSX.Element {
@@ -35,6 +37,7 @@ export function FeaturesPage(): JSX.Element {
               <strong>label</strong>. Task labels are informative and allow you to filter out tasks with the same label.
             </p>
           }
+          background={Color.ChineseBlack}
         />
 
         <Feature
@@ -55,19 +58,21 @@ export function FeaturesPage(): JSX.Element {
           }
         />
 
-        <h2 css={css({ textAlign: "center" })}>Other features</h2>
-        <ul>
-          <li>subtasks</li>
-          <li>search</li>
-          <li>filters</li>
-          <li>due date notifications</li>
-          <li>repeated tasks</li>
-          <li>task priority</li>
-          <li>multi device support</li>
-          <li>backup</li>
-          <li>activity log</li>
-          <li>insights</li>
-        </ul>
+        <Container>
+          <h2 css={css({ textAlign: "center" })}>Other features</h2>
+          <ul>
+            <li>subtasks</li>
+            <li>search</li>
+            <li>filters</li>
+            <li>due date notifications</li>
+            <li>repeated tasks</li>
+            <li>task priority</li>
+            <li>multi device support</li>
+            <li>backup</li>
+            <li>activity log</li>
+            <li>insights</li>
+          </ul>
+        </Container>
       </Page>
     </Fragment>
   );

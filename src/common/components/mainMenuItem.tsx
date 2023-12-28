@@ -12,7 +12,10 @@ export function MainMenuItem({ path, children }: MainMenuItemProps): JSX.Element
   const { pathname } = useLocation();
 
   return (
-    <Link to={path} css={css({ textDecoration: "none", color: pathname === path ? Color.CaribbeanGreen : Color.White })}>
+    <Link
+      to={path}
+      css={css({ textDecoration: "none", color: pathname === path ? Color.CaribbeanGreen : Color.White, "&:hover": { opacity: 0.8 } })}
+    >
       {children}
     </Link>
   );

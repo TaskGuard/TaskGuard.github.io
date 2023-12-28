@@ -3,6 +3,7 @@ export enum Color {
   Black = "#000000",
   BrightGray = "#eeeeee",
   CaribbeanGreen = "#00cb83",
+  ChineseBlack = "#091525",
   DarkGunmetal = "#162232",
   EerieBlack = "#0b1727",
   Flirt = "#a2076d",
