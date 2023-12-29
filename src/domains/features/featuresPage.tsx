@@ -13,66 +13,68 @@ export function FeaturesPage(): JSX.Element {
     <Fragment>
       <Head title="Features" description="List of TaskGuard features" />
       <Page>
-        <Heading level={1} css={css({ textAlign: "center" })}>
-          Features
-        </Heading>
+        <div css={css({ height: "100%", overflowY: "auto", scrollSnapType: "y mandatory" })}>
+          <Heading level={1} css={css({ textAlign: "center" })}>
+            Features
+          </Heading>
 
-        <Feature
-          title="Projects"
-          leftColumn={
-            <p>
-              <strong>Projects</strong> allow you to organize <strong>tasks</strong> into <strong>lists</strong> and easily move between
-              them. Projects, lists and tasks can be freely named or reordered.
-            </p>
-          }
-          rightColumn={<img src="./features/projects.jpg" alt="projects" css={css({ maxWidth: "100%" })} />}
-        />
-
-        <Feature
-          title="Labels"
-          leftColumn={<img src="./features/labels.jpg" alt="labels" css={css({ maxWidth: "100%" })} />}
-          rightColumn={
-            <p>
-              Each <strong>task</strong> can have multiple <strong>labels</strong> and multiple <strong>tasks</strong> can have the same{" "}
-              <strong>label</strong>. Task labels are informative and allow you to filter out tasks with the same label.
-            </p>
-          }
-          background={Color.ChineseBlack}
-        />
-
-        <Feature
-          title="Calendar"
-          leftColumn={
-            <div>
-              <img src="./features/calendar-menu.jpg" alt="calendar menu" css={css({ maxWidth: "100%" })} />
-            </div>
-          }
-          rightColumn={
-            <div>
+          <Feature
+            title="Projects"
+            leftColumn={
               <p>
-                The <strong>calendar</strong> is divided into several categories - today, tomorrow, week, month and all planned tasks
-                section. The <strong>calendar</strong> shows all tasks that have a <strong>due date</strong> set.
+                <strong>Projects</strong> allow you to organize <strong>tasks</strong> into <strong>lists</strong> and easily move between
+                them. Projects, lists and tasks can be freely named or reordered.
               </p>
-              <img src="./features/calendar.jpg" alt="calendar" css={css({ maxWidth: "100%" })} />
-            </div>
-          }
-        />
+            }
+            rightColumn={<img src="./features/projects.jpg" alt="projects" css={css({ maxWidth: "100%" })} />}
+          />
 
-        <Container>
-          <h2 css={css({ textAlign: "center" })}>Other features</h2>
-          <ul>
-            <li>subtasks</li>
-            <li>search</li>
-            <li>filters</li>
-            <li>due date notifications</li>
-            <li>repeated tasks</li>
-            <li>task priority</li>
-            <li>multi device support</li>
-            <li>backup</li>
-            <li>activity log</li>
-            <li>insights</li>
-          </ul>
-        </Container>
+          <Feature
+            title="Labels"
+            leftColumn={<img src="./features/labels.jpg" alt="labels" css={css({ maxWidth: "100%" })} />}
+            rightColumn={
+              <p>
+                Each <strong>task</strong> can have multiple <strong>labels</strong> and multiple <strong>tasks</strong> can have the same{" "}
+                <strong>label</strong>. Task labels are informative and allow you to filter out tasks with the same label.
+              </p>
+            }
+            background={Color.ChineseBlack}
+          />
+
+          <Feature
+            title="Calendar"
+            leftColumn={
+              <div>
+                <img src="./features/calendar-menu.jpg" alt="calendar menu" css={css({ maxWidth: "100%" })} />
+              </div>
+            }
+            rightColumn={
+              <div>
+                <p>
+                  The <strong>calendar</strong> is divided into several categories - today, tomorrow, week, month and all planned tasks
+                  section. The <strong>calendar</strong> shows all tasks that have a <strong>due date</strong> set.
+                </p>
+                <img src="./features/calendar.jpg" alt="calendar" css={css({ maxWidth: "100%" })} />
+              </div>
+            }
+          />
+
+          <Container>
+            <h2 css={css({ textAlign: "center", scrollSnapAlign: "start" })}>Other features</h2>
+            <ul>
+              <li>subtasks</li>
+              <li>search</li>
+              <li>filters</li>
+              <li>due date notifications</li>
+              <li>repeated tasks</li>
+              <li>task priority</li>
+              <li>multi device support</li>
+              <li>backup</li>
+              <li>activity log</li>
+              <li>insights</li>
+            </ul>
+          </Container>
+        </div>
       </Page>
     </Fragment>
   );

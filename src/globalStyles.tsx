@@ -6,8 +6,14 @@ export function GlobalStyles() {
   return (
     <Global
       styles={css({
+        "#root": {
+          height: "100%",
+        },
         "*, ::after, ::before": {
           boxSizing: "border-box",
+        },
+        html: {
+          height: "100%",
         },
         body: {
           padding: 0,
