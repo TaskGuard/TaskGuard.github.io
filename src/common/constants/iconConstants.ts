@@ -1,5 +1,5 @@
 import { IconProp as FaIconProp, IconDefinition as FaIconDefinition } from "@fortawesome/fontawesome-svg-core";
-import { faAndroid, faGithub, faWindows } from "@fortawesome/free-brands-svg-icons";
+import { faAndroid, faApple, faChrome, faEdge, faGithub, faLinux, faSafari, faWindows } from "@fortawesome/free-brands-svg-icons";
 import { faDove, faEye, faGears, faHeart, faRocket, faShield, faSignal } from "@fortawesome/free-solid-svg-icons";
 
 export const icon = {
@@ -13,6 +13,11 @@ export const icon = {
   shield: faShield,
   signal: faSignal,
   windows: faWindows,
+  linux: faLinux,
+  apple: faApple,
+  edge: faEdge,
+  safari: faSafari,
+  chrome: faChrome,
 };
 
 export type IconProp = FaIconProp;
