@@ -1,6 +1,7 @@
 import { css } from "@emotion/react";
 import { PropsWithChildren } from "react";
 import { Link } from "react-router-dom";
+
 import { Color } from "../../../common/constants/colorConstants";
 
 export type BlogEntryProps = PropsWithChildren<{

@@ -20,7 +20,7 @@ export function BlogArticle({ title, image, header, children, footer }: BlogArti
 
       <Page>
         <Container>
-          <article css={css({ fontSize: 18, color: "#999999", h2: { color: Color.White }, h3: { color: Color.White } })}>
+          <article css={css({ fontSize: 18, color: Color.SpanishGray, h2: { color: Color.White }, h3: { color: Color.White } })}>
             <header>
               <img src={image} alt={title} css={css({ width: "100%" })} />
               <h1 css={css({ fontSize: 48, fontWeight: "bolder", color: Color.White })}>{title}</h1>
