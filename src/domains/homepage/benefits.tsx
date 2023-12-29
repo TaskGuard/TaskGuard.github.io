@@ -1,5 +1,4 @@
-import { Text, SimpleGrid } from "@mantine/core";
-import { css } from "@emotion/react";
+import { SimpleGrid } from "@mantine/core";
 
 import { Benefit } from "./benefit";
 import { icon } from "../../common/constants/iconConstants";
@@ -8,10 +7,6 @@ import { Container } from "../../common/components/container";
 export function Benefits(): JSX.Element {
   return (
     <Container size="lg" py="xl">
-      <Text c="dimmed" ta="center" mt="md" css={css({ marginTop: 35 })}>
-        Enjoy the app with modern UI while you take back control of your data and privacy.
-      </Text>
-
       <SimpleGrid cols={3} spacing="xl" mt={50} breakpoints={[{ maxWidth: "md", cols: 1 }]}>
         <Benefit title="Privacy" icon={icon.eye}>
           Your data stays on your devices. With end-to-end encryption, you can sync and backup your data with providers you trust.

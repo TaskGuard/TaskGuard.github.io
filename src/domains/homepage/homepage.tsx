@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import { css } from "@emotion/react";
-import { Group } from "@mantine/core";
+import { Group, Text } from "@mantine/core";
 import { Link } from "react-router-dom";
 
 import { Head } from "../../common/components/head";
@@ -14,7 +14,7 @@ export function Homepage(): JSX.Element {
     <Fragment>
       <Head description="Personal task management app." />
 
-      <div css={css({ textAlign: "center", display: "flex", alignItems: "center", height: "100vh" })}>
+      <div css={css({ textAlign: "center", display: "flex", alignItems: "center", height: "100vh", marginTop: 20 })}>
         <div css={css({ margin: "auto" })}>
           <h1 css={css({ fontSize: 54, marginBottom: 10 })}>
             Task<span css={css({ color: Color.CaribbeanGreen })}>Guard</span>
@@ -30,6 +30,10 @@ export function Homepage(): JSX.Element {
               </Button>
             </Link>
           </Group>
+
+          <Text c="dimmed" ta="center" mt="md" css={css({ marginTop: 30, paddingLeft: 5, paddingRight: 5 })}>
+            Enjoy the app with modern UI while you take back control of your data and privacy.
+          </Text>
 
           <Benefits />
         </div>
