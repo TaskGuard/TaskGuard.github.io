@@ -3,6 +3,7 @@ import { Fragment } from "react";
 
 import { Container } from "../../common/components/container";
 import { Head } from "../../common/components/head";
+import { Heading } from "../../common/components/heading";
 import { Page } from "../../common/components/page";
 import { Color } from "../../common/constants/colorConstants";
 import { Feature } from "./feature";
@@ -12,7 +13,9 @@ export function FeaturesPage(): JSX.Element {
     <Fragment>
       <Head title="Features" description="List of TaskGuard features" />
       <Page>
-        <h1 css={css({ textAlign: "center" })}>Features</h1>
+        <Heading level={1} css={css({ textAlign: "center" })}>
+          Features
+        </Heading>
 
         <Feature
           title="Projects"

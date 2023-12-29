@@ -1,18 +1,13 @@
-import { Container, Group, Badge, Text, SimpleGrid } from "@mantine/core";
+import { Text, SimpleGrid } from "@mantine/core";
 import { css } from "@emotion/react";
 
 import { Benefit } from "./benefit";
 import { icon } from "../../common/constants/iconConstants";
+import { Container } from "../../common/components/container";
 
 export function Benefits(): JSX.Element {
   return (
     <Container size="lg" py="xl">
-      <Group position="center">
-        <Badge variant="filled" size="xl" styles={{ root: { background: "#00cb83" } }}>
-          Coming soon
-        </Badge>
-      </Group>
-
       <Text c="dimmed" ta="center" mt="md" css={css({ marginTop: 35 })}>
         Enjoy the app with modern UI while you take back control of your data and privacy.
       </Text>

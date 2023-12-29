@@ -32,11 +32,11 @@ export function Header(): JSX.Element {
           spacing={0}
           position="right"
           h={headerHeight}
-          css={{
+          css={css({
             "@media (max-width: 767px)": {
               display: "none",
             },
-          }}
+          })}
         >
           <ActionIcon size="lg" component="a" href="https://github.com/orgs/TaskGuard/repositories" rel="noreferrer" target="_blank">
             <Icon icon={icon.github} />

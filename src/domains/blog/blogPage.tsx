@@ -2,6 +2,7 @@ import { Fragment } from "react";
 
 import { Container } from "../../common/components/container";
 import { Head } from "../../common/components/head";
+import { Heading } from "../../common/components/heading";
 import { Page } from "../../common/components/page";
 import { BlogRoute } from "./blogRoutes";
 import { BlogEntry } from "./parts/blogEntry";
@@ -12,7 +13,7 @@ export function BlogPage(): JSX.Element {
       <Head title="Blog" description="TaskGuard blog" />
       <Page>
         <Container>
-          <h1>Blog</h1>
+          <Heading level={1}>Blog</Heading>
 
           <BlogEntry name="The Hidden Risks Of External Dependencies" link={BlogRoute.HiddenRisksOfExternalDependencies}>
             Discover how external dependencies can present challenges in compatibility, security, and maintenance.

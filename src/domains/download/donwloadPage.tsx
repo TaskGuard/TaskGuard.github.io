@@ -6,6 +6,7 @@ import { Page } from "../../common/components/page";
 import { Icon } from "../../common/components/icon";
 import { icon } from "../../common/constants/iconConstants";
 import { Head } from "../../common/components/head";
+import { Heading } from "../../common/components/heading";
 
 export function DownloadPage(): JSX.Element {
   return (
@@ -13,7 +14,7 @@ export function DownloadPage(): JSX.Element {
       <Head title="Downloads" description="Download TaskGuard apps" />
       <Page>
         <Container>
-          <h1>Download</h1>
+          <Heading level={1}>Download</Heading>
           <Icon icon={icon.android} /> Android{" "}
           <Badge variant="filled" size="md" styles={{ root: { background: "#00cb83" } }}>
             Coming soon
