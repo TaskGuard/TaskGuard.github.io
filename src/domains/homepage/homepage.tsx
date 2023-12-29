@@ -24,7 +24,7 @@ export function Homepage(): JSX.Element {
           </p>
 
           <Group position="center" css={css({ marginTop: 30 })}>
-            <Link to={"https://app.taskguard.org/"}>
+            <Link to={"https://app.taskguard.org/"} target="_blank">
               <Button variant="primary" size="lg" iconLeft={icon.rocket}>
                 Get Started
               </Button>

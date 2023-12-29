@@ -19,13 +19,13 @@ export function DownloadPage(): JSX.Element {
           <div css={css({ textAlign: "center" })}>
             <Heading level={1}>Download</Heading>
 
-            <Link to={"https://app.taskguard.org/"}>
+            <Link to={"https://app.taskguard.org/"} target="_blank">
               <Button variant="primary" size="lg" iconLeft={icon.rocket}>
                 Open in browser
               </Button>
             </Link>
 
-            <div css={css({ marginTop: 10 })}>
+            <div css={css({ marginTop: 15 })}>
               <Icon icon={icon.chrome} marginRight={10} size="lg" />
               <Icon icon={icon.edge} marginRight={10} size="lg" />
               <Icon icon={icon.safari} marginRight={10} size="lg" />
