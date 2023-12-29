@@ -14,7 +14,7 @@ export function Homepage(): JSX.Element {
     <Fragment>
       <Head description="Personal task management app." />
 
-      <div css={css({ textAlign: "center", display: "flex", alignItems: "center", height: "100vh", marginTop: 20 })}>
+      <div css={css({ textAlign: "center", display: "flex", alignItems: "center", height: "100%", paddingTop: 20 })}>
         <div css={css({ margin: "auto" })}>
           <h1 css={css({ fontSize: 54, marginBottom: 10 })}>
             Task<span css={css({ color: Color.CaribbeanGreen })}>Guard</span>
