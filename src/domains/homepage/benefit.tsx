@@ -1,7 +1,10 @@
-import { IconProp } from "@fortawesome/fontawesome-svg-core";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Card, Text } from "@mantine/core";
 import { PropsWithChildren } from "react";
+import { css } from "@emotion/react";
+import { Card, Text } from "@mantine/core";
+
+import { Color } from "../../common/constants/colorConstants";
+import { Icon } from "../../common/components/icon";
+import { IconProp } from "../../common/constants/iconConstants";
 
 export type BenefitProps = PropsWithChildren<{
   title: string;
@@ -10,8 +13,8 @@ export type BenefitProps = PropsWithChildren<{
 
 export function Benefit({ title, icon, children }: BenefitProps): JSX.Element {
   return (
-    <Card shadow="md" radius="md" padding="xl">
-      <FontAwesomeIcon icon={icon} size="xl" color="#00cb83" />
+    <Card shadow="md" radius="md" padding="xl" css={css({ background: Color.RichBlack })}>
+      <Icon icon={icon} size="xl" color={Color.CaribbeanGreen} />
       <Text fz="lg" fw={500} mt="md">
         {title}
       </Text>
