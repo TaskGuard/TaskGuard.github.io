@@ -15,7 +15,7 @@ export type ButtonProps = MantineButtonProps & {
   onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
 };
 
-export type ButtonVariant = "primary" | "secondary" | "warning" | "danger" | "form";
+export type ButtonVariant = "primary" | "secondary" | "warning" | "danger";
 
 export const Button = forwardRef(function Button({ iconLeft, iconColor, ...props }: ButtonProps, ref): JSX.Element {
   const theme = useTheme();
@@ -84,17 +84,13 @@ function getButtonBackground(variant: ButtonVariant, theme: Theme): Color | unde
       return theme.warningColor;
     case "danger":
       return theme.errorColor;
-    case "form":
-      return theme.input.background;
     default:
       return undefined;
   }
 }
 
 function getButtonColor(variant: ButtonVariant, theme: Theme): Color | undefined {
-  if (variant === "form") {
-    return theme.input.color;
-  } else if (variant === "secondary") {
+  if (variant === "secondary") {
     return theme.secondaryColor;
   } else {
     return undefined;
@@ -102,9 +98,7 @@ function getButtonColor(variant: ButtonVariant, theme: Theme): Color | undefined
 }
 
 function getButtonHoverColor(variant: ButtonVariant, theme: Theme): Color | undefined {
-  if (variant === "form") {
-    return theme.input.color;
-  } else if (variant === "secondary") {
+  if (variant === "secondary") {
     return theme.color;
   } else {
     return undefined;
