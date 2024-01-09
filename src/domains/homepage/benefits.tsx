@@ -8,20 +8,20 @@ export function Benefits(): JSX.Element {
   return (
     <Container size="lg" py="xl">
       <SimpleGrid cols={3} spacing="xl" mt={50} breakpoints={[{ maxWidth: "md", cols: 1 }]}>
-        <Benefit title="Privacy" icon={icon.eye}>
-          Your data stays on your devices. With end-to-end encryption, you can sync and backup your data with providers you trust.
+        <Benefit title="Privacy" icon={icon.privacy}>
+          Peer-to-peer communication and end-to-end encryption ensures that your data stays on your devices.
         </Benefit>
 
         <Benefit title="Freedom" icon={icon.dove}>
           TaskGuard is free with no limits. The app runs on your devices and you take care of your data, so there are no server costs.
         </Benefit>
 
-        <Benefit title="Security" icon={icon.shield}>
-          Decentralized system and end-to-end encryption provide a high level of protection over cloud-based products.
+        <Benefit title="High availability" icon={icon.signal}>
+          App works offline. Connection is only required for multi-device synchronization.
         </Benefit>
 
-        <Benefit title="High availability" icon={icon.signal}>
-          App works offline. Connection is only required for multi-device sync and external backup.
+        <Benefit title="Security" icon={icon.shield}>
+          Decentralized system and end-to-end encryption provide a high level of protection over cloud-based products.
         </Benefit>
 
         <Benefit title="Feature-rich" icon={icon.gears}>
