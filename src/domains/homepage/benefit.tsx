@@ -13,7 +13,7 @@ export type BenefitProps = PropsWithChildren<{
 
 export function Benefit({ title, icon, children }: BenefitProps): JSX.Element {
   return (
-    <Card shadow="md" radius="md" padding="xl" css={css({ background: Color.RichBlack })}>
+    <Card shadow="md" radius="md" padding="xl" css={css({ background: Color.RichBlack, opacity: 0.9 })}>
       <Icon icon={icon} size="xl" color={Color.CaribbeanGreen} />
       <Text fz="lg" fw={500} mt="md">
         {title}
