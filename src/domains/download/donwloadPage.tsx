@@ -1,4 +1,6 @@
 import { Fragment } from "react";
+import { css } from "@emotion/react";
+import { Link } from "react-router-dom";
 
 import { Container } from "../../common/components/container";
 import { Page } from "../../common/components/page";
@@ -6,9 +8,7 @@ import { Icon } from "../../common/components/icon";
 import { icon } from "../../common/constants/iconConstants";
 import { Head } from "../../common/components/head";
 import { Heading } from "../../common/components/heading";
-import { Link } from "react-router-dom";
 import { Button } from "../../common/components/button";
-import { css } from "@emotion/react";
 
 export function DownloadPage(): JSX.Element {
   return (

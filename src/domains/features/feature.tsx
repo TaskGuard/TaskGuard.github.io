@@ -15,12 +15,8 @@ export function Feature({ title, leftColumn, rightColumn, background }: FeatureP
           {title}
         </Heading>
         <Row>
-          <Col xs={12} sm={6}>
-            {leftColumn}
-          </Col>
-          <Col xs={12} sm={6}>
-            {rightColumn}
-          </Col>
+          <Col span={{ xs: 12, sm: 6 }}>{leftColumn}</Col>
+          <Col span={{ xs: 12, sm: 6 }}>{rightColumn}</Col>
         </Row>
       </Container>
     </div>

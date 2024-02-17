@@ -5,7 +5,7 @@ import { MainMenuItem } from "./mainMenuItem";
 
 export function MainMenu(): JSX.Element {
   return (
-    <Group spacing={10} h={headerHeight}>
+    <Group gap={10} h={headerHeight}>
       <MainMenuItem path="/download">Download</MainMenuItem>
       <MainMenuItem path="/features">Features</MainMenuItem>
       <MainMenuItem path="/blog">Blog</MainMenuItem>

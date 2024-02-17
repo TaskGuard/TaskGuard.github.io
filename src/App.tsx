@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Outlet, Route, Routes } from "react-router-dom";
 
 import { Layout } from "./common/components/layout";
 import { HiddenRisksOfExternalDependencies } from "./domains/blog/articles/hiddenRisksOfExternalDependencies";
@@ -9,11 +9,12 @@ import { DownloadPage } from "./domains/download/donwloadPage";
 import { NotFoundPage } from "./domains/errorPages/notFoundPage";
 import { FeaturesPage } from "./domains/features/featuresPage";
 import { Homepage } from "./domains/homepage/homepage";
+import { Header } from "./common/components/header";
 
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Layout />}>
+      <Route path="/" element={<Layout header={<Header />} content={<Outlet />} />}>
         <Route index element={<Homepage />} />
         <Route path="download" element={<DownloadPage />} />
         <Route path="features" element={<FeaturesPage />} />

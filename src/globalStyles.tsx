@@ -8,12 +8,14 @@ export function GlobalStyles() {
       styles={css({
         "#root": {
           height: "100%",
+          width: "100%",
         },
         "*, ::after, ::before": {
           boxSizing: "border-box",
         },
         html: {
           height: "100%",
+          width: "100%",
         },
         body: {
           padding: 0,
@@ -24,6 +26,7 @@ export function GlobalStyles() {
           backgroundColor: Color.EerieBlack,
           color: Color.White,
           textRendering: "optimizeLegibility",
+          fontSize: "1rem",
           fontWeight: 400,
         },
       })}

@@ -1,6 +1,6 @@
 import { css, Theme, useTheme } from "@emotion/react";
 import { Button as MantineButton, ButtonProps as MantineButtonProps } from "@mantine/core";
-import { forwardRef, MouseEvent } from "react";
+import { MouseEvent } from "react";
 
 import { Color } from "../constants/colorConstants";
 import { IconProp } from "../constants/iconConstants";
@@ -17,7 +17,7 @@ export type ButtonProps = MantineButtonProps & {
 
 export type ButtonVariant = "primary" | "secondary" | "warning" | "danger";
 
-export const Button = forwardRef(function Button({ iconLeft, iconColor, ...props }: ButtonProps, ref): JSX.Element {
+export function Button({ iconLeft, iconColor, ...props }: ButtonProps): JSX.Element {
   const theme = useTheme();
 
   return (
@@ -26,24 +26,20 @@ export const Button = forwardRef(function Button({ iconLeft, iconColor, ...props
       variant={props.variant === "secondary" ? "outline" : "filled"}
       styles={{
         root: getButtonStyle(props.variant, theme),
-        leftIcon: {
-          color: iconColor,
-        },
       }}
       css={css({
-        color: `${getButtonColor(props.variant, theme)} !important`,
+        color: getButtonColor(props.variant, theme),
         "&:hover": {
-          color: `${getButtonHoverColor(props.variant, theme)} !important`,
+          color: getButtonHoverColor(props.variant, theme),
         },
       })}
-      ref={ref as any}
-      leftIcon={iconLeft && <Icon icon={iconLeft} />}
+      leftSection={iconLeft && <Icon icon={iconLeft} color={iconColor} />}
       className={props.className}
     >
       {props.children}
     </MantineButton>
   );
-});
+}
 
 function getButtonStyle(variant: ButtonVariant, theme: Theme) {
   const background = getButtonBackground(variant, theme);

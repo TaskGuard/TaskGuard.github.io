@@ -18,7 +18,7 @@ export function BlogPage(): JSX.Element {
           <Heading level={1}>Blog</Heading>
 
           <Row>
-            <Col xs={12} sm={6}>
+            <Col span={{ xs: 12, sm: 6 }}>
               <BlogEntry
                 name="The Hidden Risks Of External Dependencies"
                 image="/blog/hidden-risks-of-external-dependencies.jpg"
@@ -27,7 +27,7 @@ export function BlogPage(): JSX.Element {
                 Discover how external dependencies can present challenges in compatibility, security, and maintenance.
               </BlogEntry>
             </Col>
-            <Col xs={12} sm={6}>
+            <Col span={{ xs: 12, sm: 6 }}>
               <BlogEntry
                 name="How to Distribute Your Apps"
                 image="/blog/how-to-distribute-your-apps.jpg"
