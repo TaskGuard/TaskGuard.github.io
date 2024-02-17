@@ -1,4 +1,6 @@
 import { Fragment } from "react";
+import stylex from "@stylexjs/stylex";
+import { Link } from "react-router-dom";
 
 import { Container } from "../../common/components/container";
 import { Page } from "../../common/components/page";
@@ -6,9 +8,8 @@ import { Icon } from "../../common/components/icon";
 import { icon } from "../../common/constants/iconConstants";
 import { Head } from "../../common/components/head";
 import { Heading } from "../../common/components/heading";
-import { Link } from "react-router-dom";
 import { Button } from "../../common/components/button";
-import { css } from "@emotion/react";
+import { alignmentStyle } from "../../common/styles/alignmentStyles";
 
 export function DownloadPage(): JSX.Element {
   return (
@@ -16,7 +17,7 @@ export function DownloadPage(): JSX.Element {
       <Head title="Downloads" description="Download TaskGuard apps" />
       <Page>
         <Container>
-          <div css={css({ textAlign: "center" })}>
+          <div {...stylex.props(alignmentStyle.center)}>
             <Heading level={1}>Download</Heading>
 
             <Link to={"https://app.taskguard.org/"} target="_blank">
@@ -25,7 +26,7 @@ export function DownloadPage(): JSX.Element {
               </Button>
             </Link>
 
-            <div css={css({ marginTop: 15 })}>
+            <div {...stylex.props(style.platforms)}>
               <Icon icon={icon.chrome} marginRight={10} size="lg" />
               <Icon icon={icon.edge} marginRight={10} size="lg" />
               <Icon icon={icon.safari} marginRight={10} size="lg" />
@@ -39,3 +40,9 @@ export function DownloadPage(): JSX.Element {
     </Fragment>
   );
 }
+
+const style = stylex.create({
+  platforms: {
+    marginTop: 15,
+  },
+});

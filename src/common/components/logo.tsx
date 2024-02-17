@@ -1,4 +1,4 @@
-import { css } from "@emotion/react";
+import stylex from "@stylexjs/stylex";
 
 import { Color } from "../constants/colorConstants";
 import { LogoSvg } from "./logoSvg";
@@ -10,28 +10,24 @@ export type LogoProps = {
 
 export function Logo({ width, height }: LogoProps): JSX.Element {
   return (
-    <div css={css({ fontSize: height - (height / 100) * 20 })}>
+    <div {...stylex.props(style.logo(height))}>
       <LogoSvg width={width} height={height} />
-      <span
-        css={css({
-          color: Color.White,
-          "@media (max-width: 767px)": {
-            display: "none",
-          },
-        })}
-      >
-        Task
-      </span>
-      <span
-        css={css({
-          color: Color.CaribbeanGreen,
-          "@media (max-width: 767px)": {
-            display: "none",
-          },
-        })}
-      >
-        Guard
-      </span>
+      <span {...stylex.props(style.name, style.nameColor(Color.White))}>Task</span>
+      <span {...stylex.props(style.name, style.nameColor(Color.CaribbeanGreen))}>Guard</span>
     </div>
   );
 }
+
+const style = stylex.create({
+  logo: (height: number) => ({
+    fontSize: height - (height / 100) * 20,
+  }),
+  name: {
+    "@media (max-width: 767px)": {
+      display: "none",
+    },
+  },
+  nameColor: (color: Color) => ({
+    color,
+  }),
+});

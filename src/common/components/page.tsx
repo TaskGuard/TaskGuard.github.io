@@ -1,8 +1,13 @@
-import { css } from "@emotion/react";
 import { PropsWithChildren } from "react";
-
-import { headerHeight } from "../constants/layoutConstants";
+import stylex from "@stylexjs/stylex";
 
 export function Page({ children }: PropsWithChildren<unknown>): JSX.Element {
-  return <div css={css({ paddingTop: headerHeight + 10, height: "100%" })}>{children}</div>;
+  return <div {...stylex.props(style.page)}>{children}</div>;
 }
+
+const style = stylex.create({
+  page: {
+    paddingTop: 10,
+    height: "100%",
+  },
+});

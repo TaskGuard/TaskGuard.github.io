@@ -6,8 +6,8 @@ import { Container } from "../../common/components/container";
 
 export function Benefits(): JSX.Element {
   return (
-    <Container size="lg" py="xl">
-      <SimpleGrid cols={3} spacing="xl" mt={50} breakpoints={[{ maxWidth: "md", cols: 1 }]}>
+    <Container>
+      <SimpleGrid cols={{ xs: 2, sm: 2, md: 3 }} spacing="lg">
         <Benefit title="Privacy" icon={icon.privacy}>
           Peer-to-peer communication and end-to-end encryption ensures that your data stays on your devices.
         </Benefit>

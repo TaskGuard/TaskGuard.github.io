@@ -1,6 +1,6 @@
-import { css } from "@emotion/react";
-import { Header as MantineHeader, Container, Group, ActionIcon } from "@mantine/core";
+import { ActionIcon } from "@mantine/core";
 import { Link } from "react-router-dom";
+import stylex from "@stylexjs/stylex";
 
 import { Color } from "../constants/colorConstants";
 import { icon } from "../constants/iconConstants";
@@ -8,41 +8,60 @@ import { headerHeight } from "../constants/layoutConstants";
 import { Icon } from "./icon";
 import { Logo } from "./logo";
 import { MainMenu } from "./mainMenu";
+import { Container } from "./container";
 
 export function Header(): JSX.Element {
   return (
-    <MantineHeader height={headerHeight} sx={{ borderBottom: 0, position: "fixed", background: Color.RichBlack }}>
-      <Container
-        fluid
-        sx={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
-        <Group h={headerHeight}>
-          <Link to="/" css={css({ textDecoration: "none" })}>
-            <Logo width={35} height={25} />
-          </Link>
-        </Group>
+    <div {...stylex.props(style.header(headerHeight))}>
+      <Container>
+        <div {...stylex.props(style.wrapper)}>
+          <div {...stylex.props(style.logo(headerHeight))}>
+            <Link to="/" {...stylex.props(style.logoLink)}>
+              <Logo width={35} height={25} />
+            </Link>
+          </div>
 
-        <MainMenu />
+          <MainMenu />
 
-        <Group
-          spacing={0}
-          position="right"
-          h={headerHeight}
-          css={css({
-            "@media (max-width: 767px)": {
-              display: "none",
-            },
-          })}
-        >
-          <ActionIcon size="lg" component="a" href="https://github.com/orgs/TaskGuard/repositories" rel="noreferrer" target="_blank">
-            <Icon icon={icon.github} />
-          </ActionIcon>
-        </Group>
+          <div {...stylex.props(style.actionWrapper)}>
+            <ActionIcon
+              size="lg"
+              component="a"
+              href="https://github.com/orgs/TaskGuard/repositories"
+              rel="noreferrer"
+              target="_blank"
+              color={Color.Transparent}
+            >
+              <Icon icon={icon.github} color={Color.White} />
+            </ActionIcon>
+          </div>
+        </div>
       </Container>
-    </MantineHeader>
+    </div>
   );
 }
+
+const style = stylex.create({
+  header: (headerHeight: number) => ({
+    background: Color.RichBlack,
+    height: headerHeight,
+    width: "100%",
+  }),
+  wrapper: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  logo: (headerHeight: number) => ({
+    height: headerHeight,
+    lineHeight: `${headerHeight}px`,
+  }),
+  logoLink: {
+    textDecoration: "none",
+  },
+  actionWrapper: {
+    "@media (max-width: 767px)": {
+      display: "none",
+    },
+  },
+});

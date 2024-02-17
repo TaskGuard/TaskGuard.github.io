@@ -14,7 +14,7 @@ export type ThemeDefinition = {
   errorColor: Color;
 };
 
-export const darkTheme: ThemeDefinition = {
+export const darkThemeDefinition: ThemeDefinition = {
   background: Color.EerieBlack,
   color: Color.BrightGray,
   primaryColor: Color.ShamrockGreen,

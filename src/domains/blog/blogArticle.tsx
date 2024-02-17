@@ -1,10 +1,11 @@
 import { Fragment, PropsWithChildren, ReactNode } from "react";
-import { css } from "@emotion/react";
+import stylex from "@stylexjs/stylex";
 
 import { Container } from "../../common/components/container";
 import { Head } from "../../common/components/head";
 import { Page } from "../../common/components/page";
 import { Color } from "../../common/constants/colorConstants";
+import { colorStyle } from "../../common/styles/colorStyles";
 
 export type BlogArticleProps = PropsWithChildren<{
   title: string;
@@ -20,10 +21,10 @@ export function BlogArticle({ title, image, header, children, footer }: BlogArti
 
       <Page>
         <Container>
-          <article css={css({ fontSize: 18, color: Color.SpanishGray, h2: { color: Color.White }, h3: { color: Color.White } })}>
+          <article {...stylex.props(style.blogArticle, colorStyle.color(Color.SpanishGray))}>
             <header>
-              <img src={image} alt={title} css={css({ width: "100%" })} />
-              <h1 css={css({ fontSize: 48, fontWeight: "bolder", color: Color.White })}>{title}</h1>
+              <img src={image} alt={title} {...stylex.props(style.image)} />
+              <h1 {...stylex.props(style.title, colorStyle.color(Color.White))}>{title}</h1>
               {header}
             </header>
 
@@ -36,3 +37,20 @@ export function BlogArticle({ title, image, header, children, footer }: BlogArti
     </Fragment>
   );
 }
+
+const style = stylex.create({
+  blogArticle: {
+    fontSize: 18,
+    /*
+    h2: { color: color.white },
+    h3: { color: color.white },
+    */
+  },
+  image: {
+    width: "100%",
+  },
+  title: {
+    fontSize: 48,
+    fontWeight: "bolder",
+  },
+});

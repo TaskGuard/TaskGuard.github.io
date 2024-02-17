@@ -1,5 +1,5 @@
-import { css } from "@emotion/react";
 import { Fragment } from "react";
+import stylex from "@stylexjs/stylex";
 
 import { Container } from "../../common/components/container";
 import { Head } from "../../common/components/head";
@@ -7,14 +7,15 @@ import { Heading } from "../../common/components/heading";
 import { Page } from "../../common/components/page";
 import { Color } from "../../common/constants/colorConstants";
 import { Feature } from "./feature";
+import { alignmentStyle } from "../../common/styles/alignmentStyles";
 
 export function FeaturesPage(): JSX.Element {
   return (
     <Fragment>
       <Head title="Features" description="List of TaskGuard features" />
       <Page>
-        <div css={css({ height: "100%", overflowY: "auto", scrollSnapType: "y mandatory" })}>
-          <Heading level={1} css={css({ textAlign: "center" })}>
+        <div {...stylex.props(style.features)}>
+          <Heading level={1} {...stylex.props(alignmentStyle.center)}>
             Features
           </Heading>
 
@@ -26,12 +27,12 @@ export function FeaturesPage(): JSX.Element {
                 them. Projects, lists and tasks can be freely named or reordered.
               </p>
             }
-            rightColumn={<img src="./features/projects.jpg" alt="projects" css={css({ maxWidth: "100%" })} />}
+            rightColumn={<img src="./features/projects.jpg" alt="projects" {...stylex.props(style.image)} />}
           />
 
           <Feature
             title="Labels"
-            leftColumn={<img src="./features/labels.jpg" alt="labels" css={css({ maxWidth: "100%" })} />}
+            leftColumn={<img src="./features/labels.jpg" alt="labels" {...stylex.props(style.image)} />}
             rightColumn={
               <p>
                 Each <strong>task</strong> can have multiple <strong>labels</strong> and multiple <strong>tasks</strong> can have the same{" "}
@@ -45,7 +46,7 @@ export function FeaturesPage(): JSX.Element {
             title="Calendar"
             leftColumn={
               <div>
-                <img src="./features/calendar-menu.jpg" alt="calendar menu" css={css({ maxWidth: "100%" })} />
+                <img src="./features/calendar-menu.jpg" alt="calendar menu" {...stylex.props(style.image)} />
               </div>
             }
             rightColumn={
@@ -54,13 +55,13 @@ export function FeaturesPage(): JSX.Element {
                   The <strong>calendar</strong> is divided into several categories - today, tomorrow, week, month and all planned tasks
                   section. The <strong>calendar</strong> shows all tasks that have a <strong>due date</strong> set.
                 </p>
-                <img src="./features/calendar.jpg" alt="calendar" css={css({ maxWidth: "100%" })} />
+                <img src="./features/calendar.jpg" alt="calendar" {...stylex.props(style.image)} />
               </div>
             }
           />
 
           <Container>
-            <h2 css={css({ textAlign: "center", scrollSnapAlign: "start" })}>Other features</h2>
+            <h2 {...stylex.props(style.otherFeaturesHeading)}>Other features</h2>
             <ul>
               <li>subtasks</li>
               <li>search</li>
@@ -79,3 +80,11 @@ export function FeaturesPage(): JSX.Element {
     </Fragment>
   );
 }
+
+const style = stylex.create({
+  features: { height: "100%", overflowY: "auto", scrollSnapType: "y mandatory" },
+  image: {
+    maxWidth: "100%",
+  },
+  otherFeaturesHeading: { textAlign: "center", scrollSnapAlign: "start" },
+});

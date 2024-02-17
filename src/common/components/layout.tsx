@@ -1,13 +1,28 @@
-import { Fragment } from "react";
-import { Outlet } from "react-router-dom";
+import { ReactNode } from "react";
+import stylex from "@stylexjs/stylex";
 
-import { Header } from "./header";
+export type LayoutProps = {
+  header: ReactNode;
+  content: ReactNode;
+};
 
-export function Layout(): JSX.Element {
+export function Layout({ header, content }: LayoutProps): JSX.Element {
   return (
-    <Fragment>
-      <Header />
-      <Outlet />
-    </Fragment>
+    <div {...stylex.props(style.layout)}>
+      <div {...stylex.props(style.headerWrapper)}>{header}</div>
+      <div {...stylex.props(style.contentWrapper)}>{content}</div>
+    </div>
   );
 }
+
+const style = stylex.create({
+  layout: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "stretch",
+    height: "100%",
+    width: "100vw",
+  },
+  headerWrapper: { width: "100%" },
+  contentWrapper: { flexGrow: 1, overflow: "auto", height: "100%", width: "100%" },
+});

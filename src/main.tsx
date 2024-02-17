@@ -1,25 +1,18 @@
-import { MantineProvider } from "@mantine/core";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
-import { HelmetProvider } from "react-helmet-async";
+import "./globalStyles.css";
+import "@mantine/core/styles.css";
 
 import App from "./App";
-import { GlobalStyles } from "./globalStyles";
-import { ThemeProvider } from "@emotion/react";
-import { darkTheme } from "./theme";
+import { Providers } from "./providers";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <HelmetProvider>
-      <MantineProvider theme={{ colorScheme: "dark" }}>
-        <ThemeProvider theme={darkTheme}>
-          <BrowserRouter>
-            <App />
-            <GlobalStyles />
-          </BrowserRouter>
-        </ThemeProvider>
-      </MantineProvider>
-    </HelmetProvider>
+    <Providers>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Providers>
   </React.StrictMode>,
 );
