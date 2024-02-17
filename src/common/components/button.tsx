@@ -1,6 +1,6 @@
-import { css, Theme, useTheme } from "@emotion/react";
-import { Button as MantineButton, ButtonProps as MantineButtonProps } from "@mantine/core";
 import { MouseEvent } from "react";
+import { Button as MantineButton, ButtonProps as MantineButtonProps } from "@mantine/core";
+import stylex from "@stylexjs/stylex";
 
 import { Color } from "../constants/colorConstants";
 import { IconProp } from "../constants/iconConstants";
@@ -9,7 +9,7 @@ import { Icon } from "./icon";
 export type ButtonProps = MantineButtonProps & {
   iconLeft?: IconProp;
   variant: ButtonVariant;
-  className?: string;
+
   iconColor?: Color;
   title?: string;
   onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
@@ -18,85 +18,27 @@ export type ButtonProps = MantineButtonProps & {
 export type ButtonVariant = "primary" | "secondary" | "warning" | "danger";
 
 export function Button({ iconLeft, iconColor, ...props }: ButtonProps): JSX.Element {
-  const theme = useTheme();
-
   return (
     <MantineButton
       {...props}
       variant={props.variant === "secondary" ? "outline" : "filled"}
-      styles={{
-        root: getButtonStyle(props.variant, theme),
-      }}
-      css={css({
-        color: getButtonColor(props.variant, theme),
-        "&:hover": {
-          color: getButtonHoverColor(props.variant, theme),
-        },
-      })}
       leftSection={iconLeft && <Icon icon={iconLeft} color={iconColor} />}
-      className={props.className}
+      {...stylex.props(style.button)}
+      styles={{
+        root: {
+          background: Color.ShamrockGreen,
+        },
+      }}
     >
       {props.children}
     </MantineButton>
   );
 }
 
-function getButtonStyle(variant: ButtonVariant, theme: Theme) {
-  const background = getButtonBackground(variant, theme);
-
-  return {
-    background: background,
-    borderStyle: "solid",
-    borderWidth: 2,
-    borderColor: getButtonBorder(variant, theme),
-    "&:hover": {
-      background: variant === "secondary" ? theme.secondaryColor : background,
-      borderColor: getButtonBorder(variant, theme),
-      opacity: 0.8,
+const style = stylex.create({
+  button: {
+    ":hover": {
+      opacity: 0.9,
     },
-    "&:disabled": {
-      background: background,
-      borderColor: getButtonBorder(variant, theme),
-      opacity: 0.6,
-    },
-  };
-}
-
-function getButtonBorder(variant: ButtonVariant, theme: Theme): Color | undefined {
-  if (variant === "secondary") {
-    return theme.secondaryColor;
-  } else {
-    return getButtonBackground(variant, theme);
-  }
-}
-
-function getButtonBackground(variant: ButtonVariant, theme: Theme): Color | undefined {
-  switch (variant) {
-    case "primary":
-      return theme.primaryColor;
-    case "secondary":
-      return Color.Transparent;
-    case "warning":
-      return theme.warningColor;
-    case "danger":
-      return theme.errorColor;
-    default:
-      return undefined;
-  }
-}
-
-function getButtonColor(variant: ButtonVariant, theme: Theme): Color | undefined {
-  if (variant === "secondary") {
-    return theme.secondaryColor;
-  } else {
-    return undefined;
-  }
-}
-
-function getButtonHoverColor(variant: ButtonVariant, theme: Theme): Color | undefined {
-  if (variant === "secondary") {
-    return theme.color;
-  } else {
-    return undefined;
-  }
-}
+  },
+});

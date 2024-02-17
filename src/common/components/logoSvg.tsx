@@ -1,4 +1,5 @@
-import { css } from "@emotion/react";
+import stylex from "@stylexjs/stylex";
+
 import { Color } from "../constants/colorConstants";
 
 export type LogoSvgProps = {
@@ -14,7 +15,7 @@ export function LogoSvg({ width, height, className }: LogoSvgProps): JSX.Element
       width={width}
       height={height}
       viewBox="0 0 620 412"
-      css={css({ verticalAlign: "text-top", display: "inline-block" })}
+      {...stylex.props(style.logo)}
       className={className}
     >
       <path
@@ -99,3 +100,10 @@ C 153.00,293.00 168.00,296.58 168.00,296.58
     </svg>
   );
 }
+
+const style = stylex.create({
+  logo: {
+    verticalAlign: "text-top",
+    display: "inline-block",
+  },
+});

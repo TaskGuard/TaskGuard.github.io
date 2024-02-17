@@ -1,4 +1,3 @@
-import { css } from "@emotion/react";
 import { ActionIcon } from "@mantine/core";
 import { Link } from "react-router-dom";
 import stylex from "@stylexjs/stylex";
@@ -16,7 +15,7 @@ export function Header(): JSX.Element {
     <div {...stylex.props(style.header(headerHeight))}>
       <Container>
         <div {...stylex.props(style.wrapper)}>
-          <div css={css({ height: headerHeight, lineHeight: `${headerHeight}px` })}>
+          <div {...stylex.props(style.logo(headerHeight))}>
             <Link to="/" {...stylex.props(style.logoLink)}>
               <Logo width={35} height={25} />
             </Link>
@@ -53,6 +52,10 @@ const style = stylex.create({
     justifyContent: "space-between",
     alignItems: "center",
   },
+  logo: (headerHeight: number) => ({
+    height: headerHeight,
+    lineHeight: `${headerHeight}px`,
+  }),
   logoLink: {
     textDecoration: "none",
   },

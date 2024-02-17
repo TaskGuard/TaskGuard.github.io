@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
+import "./globalStyles.css";
 import "@mantine/core/styles.css";
 
 import App from "./App";
-import { GlobalStyles } from "./globalStyles";
 import { Providers } from "./providers";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
@@ -12,7 +12,6 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <Providers>
       <BrowserRouter>
         <App />
-        <GlobalStyles />
       </BrowserRouter>
     </Providers>
   </React.StrictMode>,

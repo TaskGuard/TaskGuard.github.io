@@ -1,0 +1,45 @@
+:root {
+  --color-brightGray: "#eeeeee";
+  --color-caribbeanGreen: "#00cb83";
+  --color-chineseBlack: "#091525";
+  --color-darkGunmetal: "#162232";
+  --color-eerieBlack: "#0b1727";
+  --color-flirt: "#a2076d";
+  --color-philippineGray: "#8e8e8e";
+  --color-richBlack: "#030a11";
+  --color-shamrockGreen: "#07a25a";
+  --color-spanishGray: "#999999";
+  --color-spiroDiscoBall: "#07c7ef";
+  --color-transparent: "transparent";
+  --color-venetianRed: "#c15e01";
+  --color-white: "#ffffff";
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-family: "Roboto", Helvetica, Sans-Serif;
+  background-color: #0b1727 !important;
+  color: var(--color-white);
+  text-rendering: "optimizeLegibility";
+  font-size: "1rem";
+  font-weight: 400;
+}
